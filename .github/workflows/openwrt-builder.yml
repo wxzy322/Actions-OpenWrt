@@ -17,7 +17,7 @@ on:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/sendlan/ipq6000-wifi
+  REPO_URL: https://github.com/wxzy322/ipq6000-wifi
   REPO_BRANCH: wifi
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .config
