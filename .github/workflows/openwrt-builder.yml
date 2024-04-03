@@ -49,7 +49,7 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
-        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+        
 
 
     - name: Clone source code
