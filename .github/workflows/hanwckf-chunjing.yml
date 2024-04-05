@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: hanwckf rax3000m
+name: hanwckf_chunjin
 
 on:
   repository_dispatch:
