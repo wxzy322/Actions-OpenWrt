@@ -19,4 +19,4 @@ sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
 # Modify hostname
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
 
-rm -rf feeds/packages/net/{mwan3,ddns-go,“pass沃”,dnsmasq,dnsmasq-full,miniupnpd}
+rm -rf feeds/packages/net/{mwan3,ddns-go,passwall,dnsmasq,dnsmasq-full,miniupnpd}
