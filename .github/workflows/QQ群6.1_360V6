@@ -20,7 +20,7 @@ env:
   REPO_URL: https://github.com/wxzy322/ipq60xx-6.1
   REPO_BRANCH: main
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: 360v6-6.1.config
+  CONFIG_FILE: 360V6-6.1.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
