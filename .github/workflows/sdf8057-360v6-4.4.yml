@@ -17,8 +17,8 @@ on:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/wenpo1975/ipq6000-wifi
-  REPO_BRANCH: wifi
+  REPO_URL: https://github.com/fxvbv/ipq60xx-360v6
+  REPO_BRANCH: main
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: 4.4wifi.config
   DIY_P1_SH: diy-part1.sh
