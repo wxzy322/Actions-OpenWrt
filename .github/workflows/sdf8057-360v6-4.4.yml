@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: OpenWrt 4.4wifi
+name: sdf8057-360v6-4.4-wifi
 
 on:
   repository_dispatch:
