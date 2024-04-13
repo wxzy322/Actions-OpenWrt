@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: OpenWrt Builder
+name: immortalwrt4.4 360v6 
 
 on:
   repository_dispatch:
