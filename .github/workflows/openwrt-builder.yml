@@ -66,6 +66,12 @@ jobs:
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
+      
+      - name: genghuanyuan
+      run: |
+        chmod +x $DIY_P4_SH
+        cd openwrt
+        $GITHUB_WORKSPACE/$DIY_P4_SH
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
