@@ -22,7 +22,8 @@ env:
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: rax3000m.config
   DIY_P1_SH: diy-part1.sh
-  DIY_P2_SH: diy-part3.sh
+  DIY_P2_SH: diy-part2.sh
+  DIY_P4_SH: diy-part4.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
@@ -66,6 +67,12 @@ jobs:
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
+
+    - name: huan ruan jian
+      run: |
+        chmod +x $DIY_P4_SH
+        cd openwrt
+        $GITHUB_WORKSPACE/$DIY_P4_SH
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
