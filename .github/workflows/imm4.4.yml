@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: imm 4.4wifi
+name: OpenWrt Builder
 
 on:
   repository_dispatch:
