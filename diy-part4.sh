@@ -19,8 +19,7 @@ git clone https://github.com/xiaorouji/openwrt-passwall.git package/feeds/smpack
 # git clone https://github.com/kenzok8/small-package --depth 1 --single-branch -b main package/feeds/smpackage/mwan3 还是整个目录 不行
 # git clone https://github.com/kenzok8/small-package --depth 1 --single-branch -b main package/feeds/smpackage/dnsmasq
 
-#svn co https://github.com/kenzok8/small-package/tree/main/mwan3 package/feeds/smpackage/mwan3
-#svn co https://github.com/kenzok8/small-package/tree/main/dnsmasq package/feeds/smpackage/dnsmasq
 
-svn export https://github.com/kenzok8/small-package/tree/main/mwan3 package/feeds/smpackage/mwan3
-svn export https://github.com/kenzok8/small-package/tree/main/dnsmasq package/feeds/smpackage/dnsmasq
+
+svn checkout https://github.com/kenzok8/small-package/trunk/mwan3 package/feeds/smpackage/mwan3
+svn checkout https://github.com/kenzok8/small-package/trunk/dnsmasq package/feeds/smpackage/dnsmasq
