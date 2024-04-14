@@ -6,6 +6,9 @@ rm -rf feeds/luci/applications/{luci-app-passwall,luci-app-ddns-go,luci-app-mwan
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 
+
+
+
 # 
 # 举例2，用第三方软件包替换当前源码库中的已有的同名软件包
 # 第一步，在 diy-part2.sh 里加入以下代码：用第一行代码先删除源码库中原来的软件，再用第二行代码引入第三方的同名软件包。
@@ -21,5 +24,3 @@ git clone https://github.com/xiaorouji/openwrt-passwall.git package/feeds/smpack
 
 
 
-svn checkout https://github.com/kenzok8/small-package/trunk/mwan3 package/feeds/smpackage/mwan3
-svn checkout https://github.com/kenzok8/small-package/trunk/dnsmasq package/feeds/smpackage/dnsmasq
