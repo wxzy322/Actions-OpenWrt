@@ -12,7 +12,7 @@ git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 # rm -rf package/lean/luci-theme-argon
 # git clone https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-theme-argon
 # 
-git clone https://github.com/jeessy2/ddns-go.git package/feeds/smpackage/ddns-go
-git clone https://github.com/xiaorouji/openwrt-passwall/tree/main/luci-app-passwall.git package/feeds/smpackage/passwall
-git clone https://github.com/kenzok8/small-package/tree/main/mwan3.git package/feeds/smpackage/mwan3
-git clone https://github.com/kenzok8/small-package/tree/main/dnsmasq.git package/feeds/smpackage/dnsmasq
+git clone https://github.com/jeessy2/ddns-go package/feeds/smpackage/ddns-go
+git clone https://github.com/xiaorouji/openwrt-passwall.git package/feeds/smpackage/passwall
+git clone https://github.com/kenzok8/small-package/tree/main/mwan3 package/feeds/smpackage/mwan3
+git clone https://github.com/kenzok8/small-package/tree/main/dnsmasq package/feeds/smpackage/dnsmasq
