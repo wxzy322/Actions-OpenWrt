@@ -14,5 +14,5 @@ git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 # 
 git clone https://github.com/jeessy2/ddns-go.git package/feeds/smpackage/ddns-go
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/feeds/smpackage/passwall
-git clone https://github.com/kenzok8/small-package.git package/feeds/smpackage/mwan3
-git clone https://github.com/kenzok8/small-package.git package/feeds/smpackage/dnsmasq
+git clone https://github.com/0xACE8/mwan3.git package/feeds/smpackage/mwan3
+# git clone https://github.com/kenzok8/small-package.git package/feeds/smpackage/dnsmasq
