@@ -16,11 +16,15 @@ git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 # git clone https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-theme-argon
 # 
 git clone https://github.com/jeessy2/ddns-go.git package/feeds/smpackage/ddns-go
-# git clone https://github.com/xiaorouji/openwrt-passwall.git package/feeds/smpackage/passwall
+git clone https://github.com/xiaorouji/openwrt-passwall.git package/feeds/smpackage/passwall
 
 # 修改后命令
 # git clone https://github.com/kenzok8/small-package --depth 1 --single-branch -b main package/feeds/smpackage/mwan3 还是整个目录 不行
 # git clone https://github.com/kenzok8/small-package --depth 1 --single-branch -b main package/feeds/smpackage/dnsmasq
+
+svn co https://github.com/kenzok8/small-package/trunk/mwan3 package/feeds/smpackage/mwan3
+svn co https://github.com/kenzok8/small-package/trunk/dnsmasq package/feeds/smpackage/dnsmasq
+
 
 
 
