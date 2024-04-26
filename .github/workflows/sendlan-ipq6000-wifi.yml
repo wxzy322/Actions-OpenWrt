@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: OpenWrt 4.4wifi
+name: sendlan-ipq6000-wifi
 
 on:
   repository_dispatch:
