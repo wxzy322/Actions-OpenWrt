@@ -54,5 +54,3 @@ rm -rf feeds/package/network/services/dnsmasq
 # git_sparse_clone master https://github.com/syb999/openwrt-19.07.1 package/network/services/msd_lite
 #git_sparse_clone main https://github.com/kenzok8/small-package mwan3
 git_sparse_clone main https://github.com/kenzok8/small-package/dnsmasq package/network/services/dnsmasq
-
-
