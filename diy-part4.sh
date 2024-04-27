@@ -1,5 +1,5 @@
 # 删除原有软件
-rm -rf feeds/luci/applications/{luci-app-mwan3,luci-app-dnsmasq-full} && rm -rf feeds/packages/net/{mwan3,dnsmasq-full}
+rm -rf feeds/luci/applications/{luci-app-mwan3,luci-app-dnsmasq-full} && rm -rf feeds/packages/net/{mwan3,dnsmasq-full,dnsmasq}
 # 删除有可能冲突
 # rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd-alt,miniupnpd-iptables,wireless-regdb}
 # 拉取最新版golang编译
@@ -53,6 +53,6 @@ function git_sparse_clone() {
 #git_sparse_clone openwrt-18.06 https://github.com/immortalwrt/luci applications/luci-app-eqos
 # git_sparse_clone master https://github.com/syb999/openwrt-19.07.1 package/network/services/msd_lite
 git_sparse_clone main https://github.com/kenzok8/small-package mwan3
-git_sparse_clone main https://github.com/kenzok8/small-package mwan3
+git_sparse_clone main https://github.com/kenzok8/small-package dnsmasq
 
 
