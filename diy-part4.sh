@@ -33,14 +33,14 @@ git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 # rm -rf feeds/luci/applications/luci-app-serverchan
 
 # Git稀疏克隆，只克隆指定目录到本地
-# function git_sparse_clone() {
-#   branch="$1" repourl="$2" && shift 2
- # git clone --depth=1 -b $branch --single-branch --filter=blob:none --sparse $repourl
-#  repodir=$(echo $repourl | awk -F '/' '{print $(NF)}')
- # cd $repodir && git sparse-checkout set $@
- # mv -f $@ ../package
-  #cd .. && rm -rf $repodir
-# }
+ function git_sparse_clone() {
+   branch="$1" repourl="$2" && shift 2
+   git clone --depth=1 -b $branch --single-branch --filter=blob:none --sparse $repourl
+   repodir=$(echo $repourl | awk -F '/' '{print $(NF)}')
+   cd $repodir && git sparse-checkout set $@
+   mv -f $@ ../package
+   cd .. && rm -rf $repodir
+  }
 
 # 添加额外插件
 #git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
@@ -53,6 +53,6 @@ git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 #git_sparse_clone openwrt-18.06 https://github.com/immortalwrt/luci applications/luci-app-eqos
 # git_sparse_clone master https://github.com/syb999/openwrt-19.07.1 package/network/services/msd_lite
 #git_sparse_clone main https://github.com/kenzok8/small-package mwan3
-#git_sparse_clone main https://github.com/kenzok8/small-package dnsmasq
+git_sparse_clone main https://github.com/kenzok8/small-package package/network/services/dnsmasq
 
 
