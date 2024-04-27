@@ -25,4 +25,4 @@ sed -i '1i src-git smpackage https://github.com/kenzok8/small-package' feeds.con
 # 活动连接数修改
 sed -i 's/16384/65536/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
 
-rm -rf feeds/package/network/services/dnsmasq
+# rm -rf feeds/package/network/services/dnsmasq
