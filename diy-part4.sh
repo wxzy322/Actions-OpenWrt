@@ -23,8 +23,8 @@ git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 # git clone https://github.com/kenzok8/small-package --depth 1 --single-branch -b main package/feeds/smpackage/dnsmasq
 
 # 移除要替换的包
-rm -rf feeds/package/network/services/dnsmasq
-rm -rf feeds/package/mwan3
+# rm -rf feeds/package/network/services/dnsmasq
+# rm -rf feeds/package/mwan3
 # rm -rf feeds/packages/net/smartdns
 # rm -rf feeds/luci/themes/luci-theme-argon
 # rm -rf feeds/luci/themes/luci-theme-netgear
@@ -33,14 +33,14 @@ rm -rf feeds/package/mwan3
 # rm -rf feeds/luci/applications/luci-app-serverchan
 
 # Git稀疏克隆，只克隆指定目录到本地
-function git_sparse_clone() {
-  branch="$1" repourl="$2" && shift 2
-  git clone --depth=1 -b $branch --single-branch --filter=blob:none --sparse $repourl
-  repodir=$(echo $repourl | awk -F '/' '{print $(NF)}')
-  cd $repodir && git sparse-checkout set $@
-  mv -f $@ ../package
-  cd .. && rm -rf $repodir
-}
+# function git_sparse_clone() {
+#   branch="$1" repourl="$2" && shift 2
+ # git clone --depth=1 -b $branch --single-branch --filter=blob:none --sparse $repourl
+#  repodir=$(echo $repourl | awk -F '/' '{print $(NF)}')
+ # cd $repodir && git sparse-checkout set $@
+ # mv -f $@ ../package
+  #cd .. && rm -rf $repodir
+# }
 
 # 添加额外插件
 #git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
@@ -52,7 +52,7 @@ function git_sparse_clone() {
 #git_sparse_clone main https://github.com/Lienol/openwrt-package luci-app-filebrowser luci-app-ssr-mudb-server
 #git_sparse_clone openwrt-18.06 https://github.com/immortalwrt/luci applications/luci-app-eqos
 # git_sparse_clone master https://github.com/syb999/openwrt-19.07.1 package/network/services/msd_lite
-git_sparse_clone main https://github.com/kenzok8/small-package mwan3
-git_sparse_clone main https://github.com/kenzok8/small-package dnsmasq
+#git_sparse_clone main https://github.com/kenzok8/small-package mwan3
+#git_sparse_clone main https://github.com/kenzok8/small-package dnsmasq
 
 
