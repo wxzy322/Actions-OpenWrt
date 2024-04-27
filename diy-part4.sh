@@ -1,5 +1,5 @@
 # 删除原有软件
-rm -rf feeds/luci/applications/{luci-app-mwan3,luci-app-dnsmasq-full} && rm -rf feeds/packages/net/{mwan3,dnsmasq-full,dnsmasq}
+# rm -rf feeds/luci/applications/{luci-app-mwan3,luci-app-dnsmasq-full} && rm -rf feeds/packages/net/{mwan3,dnsmasq-full,dnsmasq}
 # 删除有可能冲突
 # rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd-alt,miniupnpd-iptables,wireless-regdb}
 # 拉取最新版golang编译
@@ -23,8 +23,8 @@ git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 # git clone https://github.com/kenzok8/small-package --depth 1 --single-branch -b main package/feeds/smpackage/dnsmasq
 
 # 移除要替换的包
-# rm -rf feeds/packages/net/mosdns
-# rm -rf feeds/packages/net/msd_lite
+rm -rf feeds/package/network/services/dnsmasq
+rm -rf feeds/package/mwan3
 # rm -rf feeds/packages/net/smartdns
 # rm -rf feeds/luci/themes/luci-theme-argon
 # rm -rf feeds/luci/themes/luci-theme-netgear
