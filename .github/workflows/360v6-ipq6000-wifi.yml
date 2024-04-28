@@ -10,15 +10,15 @@
 # See /LICENSE for more information.
 #
 
-name: sendlan-ipq6000-wifi
+name: 360v6-ipq6000-wifi
 
 on:
   repository_dispatch:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/sendlan/ipq6000-wifi
-  REPO_BRANCH: wifi
+  REPO_URL: https://github.com/wzywzy74/openwrt-gl-ax1800
+  REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: 360v6-sendlan-4.4.config
   DIY_P1_SH: diy-part1.sh
