@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: hanwckf_chunjin
+name: hanwckf_rax3000m
 
 on:
   repository_dispatch:
@@ -20,7 +20,7 @@ env:
   REPO_URL: https://github.com/hanwckf/immortalwrt-mt798x.git
   REPO_BRANCH: openwrt-21.02
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: hanwckf-rax3000m-chunjin.config
+  CONFIG_FILE: rax3000m-20240428.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
