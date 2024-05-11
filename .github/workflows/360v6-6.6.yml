@@ -17,7 +17,7 @@ on:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/breeze303/OpenWrt
+  REPO_URL: https://github.com/breeze303/openwrt-6.x
   REPO_BRANCH: main
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: 360v6-6.6.config
