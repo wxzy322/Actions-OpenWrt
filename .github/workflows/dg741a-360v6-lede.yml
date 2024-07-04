@@ -17,10 +17,10 @@ on:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/momokind/lede-23.10.1
-  REPO_BRANCH: nlnet_xgp_v3
+  REPO_URL: https://github.com/dg741a/lede
+  REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: config/momokind-lede-23.10.1.config
+  CONFIG_FILE: config/dg741a-360v6-5.15.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
