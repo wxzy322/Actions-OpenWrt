@@ -32,15 +32,9 @@ rm -rf feeds/package/network/services/dnsmasq
 # rm -rf feeds/luci/applications/luci-app-netdata
 # rm -rf feeds/luci/applications/luci-app-serverchan
 
-# Git稀疏克隆，只克隆指定目录到本地
- function git_sparse_clone() {
-   branch="$1" repourl="$2" && shift 2
-   git clone --depth=1 -b $branch --single-branch --filter=blob:none --sparse $repourl
-   repodir=$(echo $repourl | awk -F '/' '{print $(NF)}')
-   cd $repodir && git sparse-checkout set $@
-   mv -f $@ ../package
-   cd .. && rm -rf $repodir
-  }
+rm -rf package/smpackage/passwall
+git clone --single-branch --branch 35f70ad989425c598d4dd99bd4816d548b3c0205 https://github.com/xiaorouji/openwrt-passwall.git package/feeds/smpackage/passwall
+
 
 # 添加额外插件
 #git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
@@ -55,4 +49,4 @@ rm -rf feeds/package/network/services/dnsmasq
 #git_sparse_clone main https://github.com/kenzok8/small-package mwan3
 # 以下稀疏克隆有效
 # git_sparse_clone main https://github.com/kenzok8/small-package/dnsmasq package/network/services/dnsmasq
-git_sparse_clone main https://github.com/DevOpenWRT-Router/openwrt-packages_001 package/network/services/dnsmasq
+
