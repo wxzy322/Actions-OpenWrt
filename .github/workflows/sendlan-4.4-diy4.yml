@@ -11,7 +11,7 @@
 # See /LICENSE for more information.
 #
 
-name: sendlan-360v6-4.4
+name: sendlan-360v6-4.4-diy4
 
 on:
   repository_dispatch:
