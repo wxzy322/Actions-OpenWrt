@@ -23,7 +23,7 @@ git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 # git clone https://github.com/kenzok8/small-package --depth 1 --single-branch -b main package/feeds/smpackage/dnsmasq
 
 # 移除要替换的包
-rm -rf feeds/package/network/services/dnsmasq
+# rm -rf feeds/package/network/services/dnsmasq
 # rm -rf feeds/package/mwan3
 # rm -rf feeds/packages/net/smartdns
 # rm -rf feeds/luci/themes/luci-theme-argon
