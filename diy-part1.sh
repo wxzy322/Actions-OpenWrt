@@ -22,6 +22,8 @@
 # sed -i '3i src-git small https://github.com/kenzok8/small' feeds.conf.default
 # echo 'src-git roacn https://github.com/roacn/openwrt-packages' >>feeds.conf.default
 
+sed -i '1i src-git homeproxy https://github.com/immortalwrt/homeproxy' feeds.conf.default
+
 # 活动连接数修改
 sed -i 's/16384/65536/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
 
