@@ -73,16 +73,10 @@ jobs:
        # chmod +x $DIY_P4_SH
        # cd openwrt
        # $GITHUB_WORKSPACE/$DIY_P4_SH
-       
-    - name: 删除sing-box
-      run: cd openwrt && find package/feeds/smpackage/ -type d -name "*sing-box*" -exec rm -rf {} \;
-           cd openwrt && find feeds/smpackage/ -type d -name "*sing-box*" -exec rm -rf {} \;
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
       
-
-
     - name: Load custom configuration
       run: |
         [ -e files ] && mv files openwrt/files
