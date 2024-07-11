@@ -70,9 +70,9 @@ jobs:
 
     - name: huan ruan jian
       run: |
-        chmod +x $DIY_P4_SH
-        cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P4_SH
+       # chmod +x $DIY_P4_SH
+       # cd openwrt
+       # $GITHUB_WORKSPACE/$DIY_P4_SH
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
