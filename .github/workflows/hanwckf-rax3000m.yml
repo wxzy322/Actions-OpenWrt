@@ -79,6 +79,7 @@ jobs:
       
     - name: 删除sing-box
       run: cd openwrt && find package/feeds/smpackage/ -type d -name "*sing-box*" -exec rm -rf {} \;
+           find feeds/smpackage/ -type d -name "*sing-box*" -exec rm -rf {} \;
 
     - name: Load custom configuration
       run: |
