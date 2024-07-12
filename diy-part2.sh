@@ -12,7 +12,7 @@
 
 # Modify default IP
 sed -i 's/192.168.1.1/10.1.1.1/g' package/base-files/files/bin/config_generate
-# rm -rf feeds/smpackage/{base-files,dnsmasq,firewall,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd-alt,miniupnpd-iptables,wireless-regdb}
+# rm -rf feeds/smpackage/{sing-box}
 # rm -rf feeds/package/{mwan3,ddns-go,passwall}
 # rm -rf feeds/smpackage/{base-files,dnsmasq,dnsproxy,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
 # Modify default theme
