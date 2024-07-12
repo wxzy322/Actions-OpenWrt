@@ -32,4 +32,4 @@ sed -i 's/16384/65536/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
 
 # 添加额外插件
 # git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
-git clone --depth=1 https://github.com/immortalwrt/homeproxy package/luci-app-homeproxy
+# git clone --depth=1 https://github.com/immortalwrt/homeproxy package/luci-app-homeproxy
