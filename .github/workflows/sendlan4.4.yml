@@ -80,6 +80,9 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
+    - name: 删除冲突插件
+      run: cd openwrt && rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb,luci-app-torbp,natflow,shadowsocksr-libev}
+
     - name: Download package
       id: package
       run: |
