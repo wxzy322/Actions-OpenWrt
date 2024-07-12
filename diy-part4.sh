@@ -31,6 +31,7 @@ git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 # rm -rf feeds/luci/applications/luci-app-mosdns
 # rm -rf feeds/luci/applications/luci-app-netdata
 # rm -rf feeds/luci/applications/luci-app-serverchan
+rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb,luci-app-torbp,natflow,shadowsocksr-libev,sing-box}
 
 #rm -rf package/smpackage/passwall
 # git clone --single-branch --branch 35f70ad989425c598d4dd99bd4816d548b3c0205 https://github.com/xiaorouji/openwrt-passwall.git package/feeds/smpackage/passwall
