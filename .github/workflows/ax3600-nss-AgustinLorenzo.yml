@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: mi3600-AgustinLorenzo_nss.开启所有NSS
+name: ax3600-AgustinLorenzo.开启所有NSS
 
 on:
   repository_dispatch:
