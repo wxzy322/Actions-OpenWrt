@@ -11,7 +11,7 @@
 # See /LICENSE for more information.
 #
 
-name: ax3600-immortalwrt-23.05
+name: ax3600-qosmio-nss
 
 on:
   repository_dispatch:
