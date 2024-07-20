@@ -1,22 +1,9 @@
-#!/bin/bash
-#
-# https://github.com/P3TERX/Actions-OpenWrt
-# File name: diy-part2.sh
-# Description: OpenWrt DIY script part 2 (After Update feeds)
-#
-# Copyright (c) 2019-2024 P3TERX <https://p3terx.com>
-#
-# This is free software, licensed under the MIT License.
-# See /LICENSE for more information.
-#
+# 删除&替换immortal面板及部分冲突默认软件
 
-# Modify default IP
-sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
+rm -rf feeds/luci/modules/luci-base
+rm -rf feeds/luci/modules/luci-mod-status
+rm -rf feeds/packages/utils/coremark
+rm -rf feeds/packages/net/v2ray-geodata
 
-# Modify default theme
-#sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
-
-# Modify hostname
-#sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
-
-rm -rf feeds/packages/net/{mwan3,ddns-go,passwall}
+svn export https://github.com/immortalwrt/luci/branches/master/modules/luci-base feeds/luci/modules/luci-base
+svn export https://github.com/immortalwrt/luci/branches/master/modules/luci-mod-status feeds/luci/modules/luci-mod-status
