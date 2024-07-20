@@ -74,6 +74,10 @@ jobs:
     - name: Download and extract LuCI modules
       run: |
         cd openwrt
+        rm -rf feeds/luci/modules/luci-base
+        rm -rf feeds/luci/modules/luci-mod-status
+        rm -rf feeds/packages/utils/coremark
+        rm -rf feeds/packages/net/v2ray-geodata
         wget https://github.com/immortalwrt/luci/archive/refs/heads/master.zip -O luci.zip
         unzip luci.zip
         mkdir -p feeds/luci/modules
