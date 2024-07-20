@@ -7,9 +7,15 @@ rm -rf feeds/luci/modules/luci-mod-status
 rm -rf feeds/packages/utils/coremark
 rm -rf feeds/packages/net/v2ray-geodata
 
-svn export https://github.com/immortalwrt/luci/branches/master/modules/luci-base feeds/luci/modules/luci-base
-svn export https://github.com/immortalwrt/luci/branches/master/modules/luci-mod-status feeds/luci/modules/luci-mod-status
 
+
+wget https://github.com/immortalwrt/luci/archive/refs/heads/master.zip -O luci.zip
+unzip luci.zip
+mkdir -p feeds/luci/modules
+mv luci-master/modules/luci-base feeds/luci/modules/
+mv luci-master/modules/luci-mod-status feeds/luci/modules/
+rm -rf luci-master luci.zip
+    
 
 rm -rf ./tmp
 
