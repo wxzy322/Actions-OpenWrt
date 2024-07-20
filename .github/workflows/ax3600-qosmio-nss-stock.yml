@@ -70,6 +70,22 @@ jobs:
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
 
+    - name: Download and extract LuCI modules
+      run: cd openwrt
+      wget https://github.com/immortalwrt/luci/archive/refs/heads/master.zip -O luci.zip
+      unzip luci.zip
+      mkdir -p feeds/luci/modules
+      mv luci-master/modules/luci-base feeds/luci/modules/
+      mv luci-master/modules/luci-mod-status feeds/luci/modules/
+      rm -rf luci-master luci.zip
+
+    - name: Update and install feeds
+      run: cd openwrt
+      rm -rf ./tmp
+      ./scripts/feeds update -a
+      ./scripts/feeds install -a
+
+
     - name: Load custom configuration
       run: |
         [ -e files ] && mv files openwrt/files
