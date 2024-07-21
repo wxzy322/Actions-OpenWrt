@@ -17,7 +17,7 @@ on:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/1582130940/OpenWrt-Lean-IPQ807x
+  REPO_URL: https://github.com/wxzy322/OpenWrt-Lean-IPQ807x
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: config/ax3600-5.15-Boos4721.config
