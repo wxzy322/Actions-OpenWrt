@@ -1,3 +1,4 @@
+
 #
 # https://github.com/P3TERX/Actions-OpenWrt
 #
@@ -10,7 +11,7 @@
 # See /LICENSE for more information.
 #
 
-name: ax3600-imoutowrt-5.15
+name: ax3600-master-ipq807x-nss
 
 on:
   repository_dispatch:
@@ -18,9 +19,9 @@ on:
 
 env:
   REPO_URL: https://github.com/1715173329/imoutowrt
-  REPO_BRANCH: master-ipq807x-5.15-nss
+  REPO_BRANCH: master-ipq807x-nss
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: config/ax3600-imoutowrt-5.15.config
+  CONFIG_FILE: config/ax3600-master-ipq807x-nss.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
@@ -30,7 +31,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     steps:
     - name: Checkout
@@ -49,11 +50,6 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
-    - name: Initialization environment  
-      env:  
-        DEBIAN_FRONTEND: noninteractive  
-      run: |  
-        sudo -E apt-get -qq install libcap-ng-dev  
 
     - name: Clone source code
       working-directory: /workdir
@@ -91,12 +87,6 @@ jobs:
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
-
-    - name: Clean build environment  
-      run: |  
-        rm -rf openwrt/package/feeds/packages/libcap-ng  
-        rm -rf openwrt/build_dir  
-        rm -rf openwrt/staging_dir  
 
     - name: Compile the firmware
       id: compile
@@ -153,7 +143,7 @@ jobs:
       with:
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
-        name: ax3600-imoutowrt-5.15-nss
+        name: ax3600-master-ipq807x-nss.config
         files: ${{ env.FIRMWARE }}/*
 
     - name: Delete workflow runs
