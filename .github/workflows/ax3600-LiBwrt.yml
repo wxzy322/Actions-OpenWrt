@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: ax3600-LiBwrt
+name: ax3600-imm6.6
 
 on:
   repository_dispatch:
@@ -142,7 +142,7 @@ jobs:
       with:
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
-        name: ax3600-LiBwrt.config
+        name: ax3600-LiBwrt
         files: ${{ env.FIRMWARE }}/*
 
     - name: Delete workflow runs
