@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: ax3600-imm6.6
+name: ax3600-imm6.6.43
 
 on:
   repository_dispatch:
@@ -20,8 +20,7 @@ env:
   REPO_URL: https://github.com/VIKINGYFY/immortalwrt
   REPO_BRANCH: main
   FEEDS_CONF: feeds.conf.default
-  # CONFIG_FILE: config/ax3600-imm6.6-zram.config
-  CONFIG_FILE: config/ax3600-imm6.6-mihomo.config 
+  CONFIG_FILE: config/ax3600-imm6.6.43.config 
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
@@ -143,7 +142,7 @@ jobs:
       with:
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
-        name: ax3600-imm6.6+zram+mihomo-去掉mwan3-pw
+        name: ax3600-imm6.6.43
         files: ${{ env.FIRMWARE }}/*
 
     - name: Delete workflow runs
