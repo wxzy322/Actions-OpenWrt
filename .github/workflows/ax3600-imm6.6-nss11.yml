@@ -10,17 +10,17 @@
 # See /LICENSE for more information.
 #
 
-name: OpenWrt Builder
+name: ax3600-ImmortalWrt-6.6-nss11
 
 on:
   repository_dispatch:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/AgustinLorenzo/openwrt
-  REPO_BRANCH: main_515
+  REPO_URL: https://github.com/VIKINGYFY/immortalwrt
+  REPO_BRANCH: main
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: config/ax3600-AgustinLorenzo-5.15.config
+  CONFIG_FILE: config/ax3600-imm6.6-nss11.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
@@ -141,15 +141,15 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         tag_name: ${{ steps.tag.outputs.release_tag }}
-        name: xioami ax3600 AgustinLorenzo-5.15-ssdk-nss
         body_path: release.txt
+        name: ax3600-ImmortalWrt-nss11-6.6
         files: ${{ env.FIRMWARE }}/*
 
     - name: Delete workflow runs
       uses: Mattraks/delete-workflow-runs@main
       with:
         retain_days: 0
-        keep_minimum_runs: 4
+        keep_minimum_runs: 20
 
     - name: Remove old Releases
       uses: dev-drprasad/delete-older-releases@master
