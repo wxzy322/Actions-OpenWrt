@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: ax3600-LiBwrt
+name: 360v6-LiBwrt
 
 on:
   repository_dispatch:
