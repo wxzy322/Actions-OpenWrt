@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: 360v6-ax6-AX6NSS-6.6
+name: Redmi-ax6-AX6NSS-6.6
 
 on:
   repository_dispatch:
