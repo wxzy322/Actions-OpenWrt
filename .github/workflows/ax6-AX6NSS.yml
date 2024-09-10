@@ -10,19 +10,19 @@
 # See /LICENSE for more information.
 #
 
-name: ax3600-qosmio-nss-stock-diy3
+name: 360v6-ax6-AX6NSS-6.6
 
 on:
   repository_dispatch:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/TerryLip/AX6NSS
-  REPO_BRANCH: qualcommax-6.x-nss-wifi
+  REPO_URL: https://github.com/LiBwrt-op/openwrt-6.x
+  REPO_BRANCH: main
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: config/ax3600-qosmio-nss-stock.config
+  CONFIG_FILE: config/ax6-AX6NSS6.6.44.config
   DIY_P1_SH: diy-part1.sh
-  DIY_P2_SH: diy-part3.sh
+  DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
@@ -142,7 +142,7 @@ jobs:
       with:
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
-        name: ax3600-qosmio-nss-stock-diy3
+        name: 360v6-https://github.com/TerryLip/AX6NSS
         files: ${{ env.FIRMWARE }}/*
 
     - name: Delete workflow runs
