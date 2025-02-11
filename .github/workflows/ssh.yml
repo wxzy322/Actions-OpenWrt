@@ -1,0 +1,34 @@
+name: Remote SSH Access to GitHub Actions Runner
+
+on:
+  workflow_dispatch:
+    # 允许手动触发此工作流
+
+jobs:
+  remote-ssh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install tmate
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tmate
+          # 更新包列表并安装 tmate
+
+      - name: Start tmate session
+        run: |
+          tmate -S /tmp/tmate.sock new-session -d
+          tmate -S /tmp/tmate.sock wait tmate-ready
+          echo "SSH connection string:"
+          tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}'
+          echo "Web connection string:"
+          tmate -S /tmp/tmate.sock display -p '#{tmate_web}'
+          # 启动 tmate 会话并输出 SSH 和 Web 连接信息
+
+      - name: Wait for user interaction
+        run: |
+          echo "Waiting for you to finish your operations via SSH..."
+          sleep 3600
+          # 等待 1 小时，你可按需调整等待时长
