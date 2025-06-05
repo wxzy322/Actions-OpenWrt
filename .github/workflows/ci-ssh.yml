@@ -1,17 +1,23 @@
-name: Manual Debug
-on:
-  workflow_dispatch:
-    inputs:
-      debug_enabled:
-        type: boolean
-        description: 'Run the build with tmate debugging enabled (https://github.com/marketplace/actions/debugging-with-tmate)'
-        required: false
-        default: false
+name: Debug with tmate
+
+on: [push]
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
-        if: ${{ github.event_name == 'workflow_dispatch' && inputs.debug_enabled }}
+        with:
+          # 可选：限制只有触发工作流的用户可以使用注册的 SSH 公钥访问
+          limit-access-to-actor: true
+          # 可选：设置超时时间（秒），默认为 600 秒（10 分钟）
+          connect-timeout-seconds: 600
+          # 可选：如果不需要安装 tmate 依赖（例如在自托管运行器上），设置为 false
+          install-dependencies: true
+          # 可选：禁用 sudo（如果遇到 sudo 相关问题）
+          sudo: false
