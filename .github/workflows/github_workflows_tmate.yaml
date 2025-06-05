@@ -1,23 +1,33 @@
-name: Tmate Debug Session
+name: tmate SSH Session
+
 on:
-  workflow_dispatch: # 手动触发工作流，运行方式：通过 GitHub 仓库的“Actions”标签页手动启动
-                    # 参考：https://docs.github.com/en/actions/using-workflows/manually-running-a-workflow
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
-  debug:
+  tmate:
     runs-on: ubuntu-latest
-    timeout-minutes: 180 # 设置任务超时为 3 小时
+    timeout-minutes: 180 # 设置运行时间为 3 小时
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-      # 动作来源：https://github.com/actions/checkout
-      # 用途：检出代码库到运行环境
 
-    - name: Setup tmate session
-      uses: mxschmitt/action-tmate@v3
-      with:
-        limit-access-to-actor: true # 限制仅触发者可通过 SSH 访问
-        timeout-minutes: 180 # tmate 会话超时为 3 小时
-      # 动作来源：https://github.com/mxschmitt/action-tmate
-      # 用途：启动 tmate 会话以进行远程调试
+    - name: Install tmate
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y tmate
+
+    - name: Start tmate session
+      run: |
+        tmate -S /tmp/tmate.sock new-session -d
+        tmate -S /tmp/tmate.sock wait tmate-ready
+        tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}'
+        tmate -S /tmp/tmate.sock display -p '#{tmate_web}'
+        sleep 10800 # 保持会话 3 小时 (10800 秒)
+
+    - name: Keep workflow alive
+      run: |
+        echo "tmate session is running. Connect using the SSH or Web URL displayed above."
