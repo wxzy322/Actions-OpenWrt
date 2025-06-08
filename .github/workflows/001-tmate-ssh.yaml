@@ -1,0 +1,18 @@
+name: SSH Debug Session (3 Hours)
+
+on:
+  workflow_dispatch:  # 手动触发工作流
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup tmate session with 3-hour timeout
+        uses: mxschmitt/action-tmate@v3
+        with:
+          limit-access-to-actor: true  # 仅限触发者访问
+          session-timeout: 180         # 会话超时时间（分钟），默认 60 分钟，此处设为 180 分钟（3 小时）
