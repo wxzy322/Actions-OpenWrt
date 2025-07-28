@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: 360v6-LiBwrt6.12-upnp
+name: 360v6-libwrt6.12-nss11
 
 on:
   repository_dispatch:
@@ -18,9 +18,9 @@ on:
 
 env:
   REPO_URL: https://github.com/LiBwrt/openwrt-6.x
-  REPO_BRANCH: kernel-6.12
+  REPO_BRANCH: k6.12-nss
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: config/360v6-libwrt6.12-upnp.config
+  CONFIG_FILE: config/360v6-libwrt6.12-nss11.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
@@ -142,7 +142,7 @@ jobs:
       with:
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
-        name: 360v6-LiBwrt6.12-upnp
+        name: 360v6-libwrt6.12-nss11
         files: ${{ env.FIRMWARE }}/*
 
     - name: Delete workflow runs
