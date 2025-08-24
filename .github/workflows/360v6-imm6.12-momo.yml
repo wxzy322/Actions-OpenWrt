@@ -1,3 +1,4 @@
+
 #
 # https://github.com/P3TERX/Actions-OpenWrt
 #
@@ -10,18 +11,18 @@
 # See /LICENSE for more information.
 #
 
-name: ax3600-qosmio-nss-stock
+name: 360v6-immortalwrt6.12-momo
 
 on:
   repository_dispatch:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/TerryLip/AX6NSS
-  REPO_BRANCH: qualcommax-6.x-nss-wifi
+  REPO_URL: https://github.com/VIKINGYFY/immortalwrt
+  REPO_BRANCH: main
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: config/ax3600-qosmio-nss-stock.config
-  DIY_P1_SH: diy-part1.sh
+  CONFIG_FILE: config/360v6-imm6.12-momo.config
+  DIY_P1_SH: diy-part5.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
@@ -69,29 +70,6 @@ jobs:
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
-
-
-    - name: Download and extract LuCI modules
-      run: |
-        cd openwrt
-        rm -rf feeds/luci/modules/luci-base
-        rm -rf feeds/luci/modules/luci-mod-status
-        rm -rf feeds/packages/utils/coremark
-        rm -rf feeds/packages/net/v2ray-geodata
-        wget https://github.com/immortalwrt/luci/archive/refs/heads/master.zip -O luci.zip
-        unzip luci.zip
-        mkdir -p feeds/luci/modules
-        mv luci-master/modules/luci-base feeds/luci/modules/
-        mv luci-master/modules/luci-mod-status feeds/luci/modules/
-        rm -rf luci-master luci.zip
-    
-    - name: Update and install feeds
-      run: |
-        cd openwrt
-        rm -rf ./tmp
-        ./scripts/feeds update -a
-        ./scripts/feeds install -a
-
 
     - name: Load custom configuration
       run: |
@@ -165,7 +143,7 @@ jobs:
       with:
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
-        name: ax3600-qosmio-nss-stock
+        name: 360v6-imm6.12-momo
         files: ${{ env.FIRMWARE }}/*
 
     - name: Delete workflow runs
