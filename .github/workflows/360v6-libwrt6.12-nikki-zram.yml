@@ -10,17 +10,17 @@
 # See /LICENSE for more information.
 #
 
-name: ax3600-master-ipq807x-nss-1715173329
+name: 360v6-libwrt6.12-nikki-zram
 
 on:
   repository_dispatch:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/1715173329/imoutowrt
-  REPO_BRANCH: master-ipq807x-5.15-nss
+  REPO_URL: https://github.com/LiBwrt/openwrt-6.x
+  REPO_BRANCH: k6.12-nss
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: config/ax3600-master-ipq807x-nss-1715173329.config
+  CONFIG_FILE: config/360v6-libwrt-nikki-zram.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
@@ -76,7 +76,6 @@ jobs:
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P2_SH
         cd openwrt
-        rm -rf feeds/nss_packages/qca-mcs
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
     - name: Download package
@@ -143,7 +142,7 @@ jobs:
       with:
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
-        name: ax3600-master-ipq807x-nss-1715173329.config
+        name: 360v6-libwrt6.12-nikki-zram
         files: ${{ env.FIRMWARE }}/*
 
     - name: Delete workflow runs
