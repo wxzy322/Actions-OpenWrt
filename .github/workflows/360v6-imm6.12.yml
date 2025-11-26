@@ -11,7 +11,7 @@
 # See /LICENSE for more information.
 #
 
-name: 360v6-immortalwrt-nikki-upnp
+name: 360v6-immortalwrt-nikki-hp
 
 on:
   repository_dispatch:
@@ -143,7 +143,7 @@ jobs:
       with:
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
-        name: 360v6-imm6.6-nikki-upnp
+        name: 360v6-imm6.6-nikki-hp
         files: ${{ env.FIRMWARE }}/*
 
     - name: Delete workflow runs
